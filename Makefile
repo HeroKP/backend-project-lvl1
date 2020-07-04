@@ -7,8 +7,14 @@ brain-games:
 brain-even:
 	node src/bin/brain-even.js
 
+brain-calc:
+	node src/bin/brain-calc.js
+
 publish:
 	npm publish --dry-run
 
 lint:
 	npx eslint .
+
+get-random-num:
+	node src/index.js
