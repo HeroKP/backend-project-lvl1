@@ -1,4 +1,4 @@
-export default (number1, number2 = 0) => {
+export default (number1, number2 = 1) => {
   const [min, max] = [
     Math.ceil(Math.min(number1, number2)), Math.floor(Math.max(number1, number2)),
   ];
