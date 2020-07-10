@@ -2,17 +2,16 @@ import readlineSync from 'readline-sync';
 
 const defaultIters = 3;
 
-export default (instructions, game, numberOfIters = defaultIters) => {
-  const username = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ') || 'Anonymous';
+export default (username, { instructions, makeQnA }, numberOfIters = defaultIters) => {
   console.log(`Hi ${username}!`);
   console.log(instructions);
 
   const iter = (remainingIters = numberOfIters) => {
     if (!remainingIters) return 'CONGRATULATIONS!';
 
-    const [quest, rightAnswer] = game();
+    const { question, rightAnswer } = makeQnA();
 
-    const userAnswer = readlineSync.question(`Question: ${quest}\nYour Answer: `);
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour Answer: `);
     const isAnswerRight = userAnswer === rightAnswer.toString();
 
     const apology = `I'm sorry, ${username}. I can't let you do that. `;
@@ -25,3 +24,7 @@ export default (instructions, game, numberOfIters = defaultIters) => {
   const resultMessage = iter();
   console.log(resultMessage);
 };
+
+//  const
+// username =
+// readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ') || 'Anonymous';
