@@ -24,7 +24,3 @@ export default (username, { instructions, makeQnA }, numberOfIters = defaultIter
   const resultMessage = iter();
   console.log(resultMessage);
 };
-
-//  const
-// username =
-// readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ') || 'Anonymous';
